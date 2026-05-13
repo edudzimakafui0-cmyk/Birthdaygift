@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 23rd Birthday, Best Friend!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #4a2f93, #6b3eae, #924ecf);
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      margin: 40px 0 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .age {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin: 10px 0 30px;
+      color: #ffe0f0;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    }
+
+    .message {
+      max-width: 700px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #ffe0f0;
+    }
+
+    .flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .flower {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle at center, #e1b3ff, #aa6eda, #7840b9);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 15s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(120vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 20px 0 30px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flowers" id="flowers"></div>
+
+  <h1>Happy Birthday to My Best Friend 💜</h1>
+  <div class="age">You’re Turning 23 Today!</div>
+
+  <div class="message">
+    <p>
+      To my dearest best friend, on your 23rd birthday: there aren’t enough words in the world to describe how much you mean to me.
+      You’re not just a friend—you’re a piece of my heart that I can’t live without.
+    </p>
+    <p>
+      Every laugh, every quiet moment, every late‑night conversation, and every time you showed up for me when I least expected it…  
+      those are the memories I hold closest. You’ve seen me at my lowest and still called me your favorite.
+      That kind of loyalty is rare, and I don’t take it for granted.
+    </p>
+    <p>
+      You’re smart, strong, and incredibly kind, and I’m so proud of the person you’re becoming.  
+      At 23, you’re standing at the edge of so many possibilities, and I know you’re going to make every one of them count.
+    </p>
+    <p>
+      I wish you a year filled with peace, real joy, and dreams that finally come true.  
+      May you always feel loved, seen, and celebrated—not just today, but every single day.
+    </p>
+    <p>
+      Wherever life takes you, I’ll still be here, cheering you on, laughing with you, and holding your hand through everything.  
+      Thank you for being my person.  
+      <span class="highlight">Happy 23rd birthday, my forever best friend.</span>
+    </p>
+  </div>
+
+  <div class="footer">
+    Made with love, just for you 💜
+  </div>
+
+  <script>
+    const container = document.getElementById("flowers");
+    const colors = [
+      "#e1b3ff",
+      "#c988ff",
+      "#aa6eda",
+      "#924ecf",
+      "#e6b3ff"
+    ];
+
+    // Create floating “flowers”
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      const size = Math.random() * 30 + 20;
+      flower.style.width = `${size}px`;
+      flower.style.height = `${size}px`;
+      flower.style.left = `${Math.random() * 100}%`;
+      flower.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      flower.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      container.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 15000);
+    }
+
+    // Launch new flowers every second
+    setInterval(createFlower, 1000);
+  </script>
+</body>
+</html>
